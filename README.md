@@ -1,2 +1,7 @@
-# unit-converter
-Spring Boot web application with unit, integration, API, UI and acceptance test coverage 
+# Unit Converter
+Spring Boot web application covered with the following tests:
+- Unit
+- Integration
+- API
+- UI
+- E2E Acceptance
