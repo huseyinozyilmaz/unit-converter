@@ -40,7 +40,7 @@ public class LengthConversionControllerTest {
     public void convertToInch() throws Exception {
         Mockito.when(lengthConversionService.centimetreToInch(anyDouble())).thenReturn(anyDouble());
 
-        mockMvc.perform(get("/centimetre/1"))
+        mockMvc.perform(get("/api/centimetre/1"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().is2xxSuccessful());
 

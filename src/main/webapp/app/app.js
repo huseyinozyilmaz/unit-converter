@@ -3,7 +3,7 @@ angular.module('unitConverterApp', [])
     .service('lengthConversionService', function($q, $http) {
         this.convertToInch = function (centimetre) {
             var deferred = $q.defer();
-            $http.get("/centimetre/" + centimetre)
+            $http.get("/api/centimetre/" + centimetre)
                 .then(function (response) {
                     deferred.resolve(response.data.to)
                 });
@@ -12,7 +12,7 @@ angular.module('unitConverterApp', [])
 
         this.convertToCentimetre = function (inch) {
             var deferred = $q.defer();
-            $http.get("/inch/" + inch)
+            $http.get("/api/inch/" + inch)
                 .then(function (response) {
                     deferred.resolve(response.data.to)
                 });
