@@ -24,6 +24,8 @@
 		<java.version>1.8</java.version>
         <mockito.version>2.13.0</mockito.version>
         <cucumber-java.version>1.2.5</cucumber-java.version>
+        <selenium.version>3.8.1</selenium.version>
+        <webdrivermanager.version>2.1.0</webdrivermanager.version>
     </properties>
 
 	<dependencies>
@@ -66,6 +68,24 @@
             <artifactId>cucumber-spring</artifactId>
             <version>${cucumber-java.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
 	</dependencies>
 
