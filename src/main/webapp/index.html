@@ -32,7 +32,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label class="form-label" for="centimetre">Centimetre</label>
-                        <input class="form-input" ng-model="centimetre" ng-keydown="inch=''" type="number" id="centimetre" ng-disabled="length.calculating"
+                        <input class="form-input" ng-model="centimetre" ng-keydown="inch=''" type="number" id="centimetre" ng-disabled="calculating"
                                placeholder="Centimetre">
                     </div>
                     <div class="form-group">
@@ -42,6 +42,7 @@
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" id="btnLengthConvert" ng-click="length.convert()">Convert</button>
+                    <div class="loading loading-lg" ng-show="calculating"></div>
                 </div>
             </div>
         </div>

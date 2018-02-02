@@ -33,11 +33,19 @@ public class LengthUnitConverterPage {
     }
 
     public String convertToInch(String centimetre) {
-        centimetreInput.clear();
-        centimetreInput.sendKeys(centimetre);
+        return convert(centimetreInput, inchInput, centimetre);
+    }
+
+    public String convertToCentimetre(String inch) {
+        return convert(inchInput, centimetreInput, inch);
+    }
+
+    private String convert(WebElement inputField, WebElement outputField, String value) {
+        inputField.clear();
+        inputField.sendKeys(value);
         convertButton.click();
-        new WebDriverWait(driver.getDriver(),6).until(ExpectedConditions.elementToBeClickable(inchInput));
-        return inchInput.getText();
+        new WebDriverWait(driver.getDriver(),6).until(ExpectedConditions.elementToBeClickable(outputField));
+        return outputField.getAttribute("value");
     }
 
     public String getHeader() {

@@ -9,6 +9,16 @@ Feature: Length Unit Converter
     Then the result must be <inch> inch
 
     Examples:
-      | centimetre | inch       |
-      | 0          | 0          |
-      | 1          | 0.39370079 |
+      | centimetre | inch        |
+      | 101        | 39.76377979 |
+      | 1          | 0.39370079  |
+
+  Scenario Outline: Convert inch to centimetre
+    Given I have a unit converter
+    When I convert <inch> inch to centimetre
+    Then the result must be <centimetre> centimetre
+
+    Examples:
+      | inch | centimetre |
+      | 1    | 2.54       |
+      | 5    | 12.7       |
