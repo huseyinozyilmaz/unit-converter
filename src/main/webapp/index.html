@@ -32,12 +32,12 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label class="form-label" for="centimetre">Centimetre</label>
-                        <input class="form-input" ng-model="centimetre" ng-keydown="inch=''" type="number" id="centimetre"
+                        <input class="form-input" ng-model="centimetre" ng-keydown="inch=''" type="number" id="centimetre" ng-disabled="length.calculating"
                                placeholder="Centimetre">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="inch">Inch</label>
-                        <input class="form-input" ng-model="inch" ng-keydown="centimetre=''" type="number" id="inch" placeholder="Inch">
+                        <input class="form-input" ng-model="inch" ng-keydown="centimetre=''" type="number" id="inch" ng-disabled="calculating" placeholder="Inch">
                     </div>
                 </div>
                 <div class="card-footer">

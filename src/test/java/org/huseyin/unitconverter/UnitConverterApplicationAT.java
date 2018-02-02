@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "org.huseyin.unitconverter.bdd.steps"
+        glue = {"org.huseyin.unitconverter.bdd.steps"}
 )
 public class UnitConverterApplicationAT {
 

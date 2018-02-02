@@ -22,18 +22,22 @@ angular.module('unitConverterApp', [])
     .controller('lengthConversionController', function($scope, lengthConversionService) {
 
         var lengthConversion = this;
+        $scope.calculating = false;
 
         lengthConversion.convert = function() {
+            $scope.calculating = true;
             if ($scope.centimetre) {
                 lengthConversionService.convertToInch($scope.centimetre)
                     .then(function (result) {
                         $scope.inch = result;
+                        $scope.calculating = false;
                     })
             }
             if ($scope.inch) {
                 lengthConversionService.convertToCentimetre($scope.inch)
                     .then(function (result) {
                         $scope.centimetre = result;
+                        $scope.calculating = false;
                     })
             }
         }
