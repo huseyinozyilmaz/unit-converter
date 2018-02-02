@@ -26,6 +26,7 @@
         <cucumber-java.version>1.2.5</cucumber-java.version>
 		<selenium.version>3.8.1</selenium.version>
 		<webdrivermanager.version>2.1.0</webdrivermanager.version>
+		<logback.version>1.2.3</logback.version>
 	</properties>
 
 	<dependencies>
@@ -33,6 +34,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

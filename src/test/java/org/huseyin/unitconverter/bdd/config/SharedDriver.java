@@ -3,6 +3,8 @@ package org.huseyin.unitconverter.bdd.config;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
@@ -14,6 +16,8 @@ import java.net.URL;
 @Component
 public class SharedDriver {
 
+    static final Logger Log = LoggerFactory.getLogger(SharedDriver.class);
+
     @Autowired
     Environment environment;
 
@@ -23,7 +27,7 @@ public class SharedDriver {
     public SharedDriver() {
         ChromeDriverManager.getInstance().setup();
         this.driver = new ChromeDriver();
-        System.out.println("Shared Driver Initialised");
+        Log.info("Shared Driver Initialised");
     }
 
     @PostConstruct
