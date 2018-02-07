@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class LengthConversionController {
+
+    private final LengthConversionService lengthConversionService;
+
     @Autowired
-    LengthConversionService lengthConversionService;
+    public LengthConversionController(LengthConversionService lengthConversionService) {
+        this.lengthConversionService = lengthConversionService;
+    }
 
     @RequestMapping("/centimetre/{centimetre}")
     public ConversionResult convertToInch(@PathVariable("centimetre") double centimetre) {

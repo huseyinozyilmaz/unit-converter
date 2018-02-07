@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/default.css">
 </head>
 <body ng-app="unitConverterApp">
-<div class="container" ng-controller="lengthConversionController as length">
+<div class="container">
     <header class="navbar">
         <section class="navbar-section">
             <a href="#" class="navbar-brand mr-2">Unit Converter</a>
@@ -24,7 +24,7 @@
     </header>
     <div class="columns">
         <div class="col-4 col-mx-auto">
-            <div class="card">
+            <div class="card" ng-controller="lengthConversionController as length">
                 <div class="card-header">
                     <div class="card-title h5">Length Converter</div>
                     <div class="card-subtitle text-gray">Conversion between centimetre and inch</div>
@@ -42,6 +42,28 @@
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" id="btnLengthConvert" ng-click="length.convert()">Convert</button>
+                    <div class="loading loading-lg" ng-show="calculating"></div>
+                </div>
+            </div>
+
+            <div class="card" ng-controller="currencyConversionController as currency">
+                <div class="card-header">
+                    <div class="card-title h5">Currency Converter</div>
+                    <div class="card-subtitle text-gray">Conversion between British Pound and Euro</div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="form-label" for="gbp">(£) British Pound</label>
+                        <input class="form-input" ng-model="gbp" ng-keydown="eur=''" type="number" id="gbp" ng-disabled="calculating"
+                               placeholder="£">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="eur">(€) Euro</label>
+                        <input class="form-input" ng-model="eur" ng-keydown="gbp=''" type="number" id="eur" ng-disabled="calculating" placeholder="€">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary" id="btnCurrencyConvert" ng-click="currency.convert()">Convert</button>
                     <div class="loading loading-lg" ng-show="calculating"></div>
                 </div>
             </div>
